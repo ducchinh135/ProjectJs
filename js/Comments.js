@@ -1,5 +1,5 @@
 class Comments {
-    constructor(id, name, date, content) {
+    constructor(id, date, content) {
         this._id = id;
         // this._name = name;
         this._date = date;

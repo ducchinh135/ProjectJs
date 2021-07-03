@@ -1,5 +1,5 @@
 let commentApi = "https://travel-blog-mindx.herokuapp.com/post_travel/1";
-// import Comment from "../Comments.js"
+import Comment from "../Comments.js"
 function start() {
     getCmts(renderCmts);
 
@@ -53,14 +53,15 @@ function handleCreatCmt(post) {
         }
         let id = listID.length + 1;
         console.log(listID.length);
-        let formData = {
-            id: listID.length + 1,
-            date: date,
-            content: content
-        };
+        let formData = new Comment(id, date, content)
         console.log(formData)
+        let formCmt = {
+            id: formData._id,
+            date: formData._date,
+            content: formData._content
+        }
 
-        post.comment.push(formData);
+        post.comment.push(formCmt);
 
 
         fetch(commentApi, {

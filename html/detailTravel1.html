@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 
     <link rel="stylesheet" href="../../css/reset.css">
     <!-- Font Awesome Icons -->
@@ -16,6 +15,8 @@
     <link rel="stylesheet" href="../css/styles_home.css">
     <link rel="stylesheet" href="../css/styles__inforBlog.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+
 </head>
 
 <body>
@@ -23,6 +24,21 @@
     <main>
         <site-title></site-title>
     </main>
+    <div class="inforBlog--search">
+        <div>
+            <i id="search-icon" class="fas fa-search"></i>
+            <span id="search-bar" style="display: none;">
+                <i id="search" onclick="searchBlog()" class="fas fa-search"></i>
+                <strong id="fade"><input type="text" placeholder="Search..." id="txtSearch" /></strong>
+                <strong id="deleteSearch" onclick="deleteSearch()"><i class="fas fa-times"></i></strong>
+            </span>
+        </div>
+    </div>
+    <script>
+        $("#search-icon").click(function () {
+            $("#search-bar").toggle();
+        });
+    </script>
     <div class="inforBlog--container" id="exploree">
 
     </div>
@@ -52,15 +68,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Waypoint -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
-        integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
-        integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
-        crossorigin="anonymous"></script>
-
-
+    <script src="../js/search.js"></script>
     <script src="../js/index.js" type="module"></script>
 
     <script src="../js/detail-post/detail.js"></script>
